@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/sayPhoto/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/sayPhoto/static/js/main.bc85520d.chunk.js",
+    "main.js.map": "/sayPhoto/static/js/main.bc85520d.chunk.js.map",
+    "runtime-main.js": "/sayPhoto/static/js/runtime-main.fb9821e9.js",
+    "runtime-main.js.map": "/sayPhoto/static/js/runtime-main.fb9821e9.js.map",
+    "static/js/2.4c0e7a90.chunk.js": "/sayPhoto/static/js/2.4c0e7a90.chunk.js",
+    "static/js/2.4c0e7a90.chunk.js.map": "/sayPhoto/static/js/2.4c0e7a90.chunk.js.map",
+    "static/js/3.02f3121b.chunk.js": "/sayPhoto/static/js/3.02f3121b.chunk.js",
+    "static/js/3.02f3121b.chunk.js.map": "/sayPhoto/static/js/3.02f3121b.chunk.js.map",
+    "index.html": "/sayPhoto/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/sayPhoto/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.4c0e7a90.chunk.js.LICENSE.txt": "/sayPhoto/static/js/2.4c0e7a90.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fb9821e9.js",
+    "static/js/2.4c0e7a90.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.bc85520d.chunk.js"
+  ]
+}
