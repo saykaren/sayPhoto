@@ -3,7 +3,12 @@ import "../Styling/App.css";
 import Navbar from "./NavBar";
 import Planets from "./Planets";
 import People from "./People";
-import { QueryClient, QueryClientProvider } from 'react-query'
+import {   useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,} from 'react-query'
+import {ReactQueryDevtools} from 'react-query-devtools';
 
 const queryClient = new QueryClient()
 
@@ -11,6 +16,7 @@ function App() {
   const [page, setPage] = useState("planets");
 
   return (
+    <>
     <QueryClientProvider client={queryClient}>
     <div className="App">
       <h1>Star Wars Info</h1>
@@ -18,10 +24,14 @@ function App() {
       <div className="content">
         {page === "planets" ? <Planets /> : <People />}
       </div>
-     
-    </div>
+      </div>
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     </QueryClientProvider>
+      
+       </>
   );
 }
+
+
 
 export default App;
