@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import { useQuery, QueryClient } from "react-query";
+import fetchCharacters from './useQuery/fetchCharacters';
+import CharacterCard from './Cards/CharacterCard';
 
 //https://rickandmortyapi.com/api
-
-// var url = 'https://rickandmortyapi.com/api/character';
-
-const fetchCharacters = async () => {
-  const res = await fetch("https://rickandmortyapi.com/api/character");
-  return res.json();
-};
 
 const RickAndMorty = () => {
   const { data, status } = useQuery("characterList", fetchCharacters);
@@ -23,6 +18,10 @@ const RickAndMorty = () => {
       {status === "success" && (
         <>
           {data.results.map((dataPoint, dataIndex) => (
+            <CharacterCard dataPoint={dataPoint} dataIndex={dataIndex} />
+
+          ))}
+          {data.results.map((dataPoint, dataIndex) => (
             <div key={dataIndex} className="card">
               <h3>Name: {dataPoint.name}</h3>
               <img src={dataPoint.image} />
@@ -30,6 +29,7 @@ const RickAndMorty = () => {
               <p>Status: {dataPoint.status}</p>
             </div>
           ))}
+
         </>
       )}
       {/* {status === 'success' && dataSet === "https://rickandmortyapi.com/api/episode" && (

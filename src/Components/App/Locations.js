@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { useQuery, QueryClient } from "react-query";
-
-const fetchLocations = async () => {
-  const res = await fetch("https://rickandmortyapi.com/api/location");
-  return res.json();
-};
+import fetchLocations from './useQuery/fetchLocations';
+import fetchCharacters from './useQuery/fetchCharacters';
+import CharacterCard from './Cards/CharacterCard';
 
 const LocationsRicky = () => {
   const { data, status } = useQuery("locations", fetchLocations);
+  const { dataCharacter, statusCharacter } = useQuery("characterList", fetchCharacters);
 
-  console.log(data);
+  console.log({data});
   return (
     <div>
       <h2>Locations</h2>
@@ -22,7 +21,11 @@ const LocationsRicky = () => {
             <div key={dataIndex} className="card">
               <h3>Location Name: {dataPoint.name}</h3>
               <p> Type: {dataPoint.type}</p>
-              <p>Residents: eventually pull here</p>
+              <p>Residents: {dataPoint.residents.map((resident, indexR)=>(
+                //   <CharacterCard dataPoint={resident} dataIndex={indexR} />
+                <div>{resident}</div>
+              ))
+              }</p>
             </div>
           ))}
         </>

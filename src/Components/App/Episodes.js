@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useQuery, QueryClient } from "react-query";
+import fetchEpisodes from './useQuery/fetchEpisodes';
 
-const fetchEpisodes = async () => {
-  const res = await fetch("https://rickandmortyapi.com/api/episode");
-  return res.json();
-};
+// const fetchEpisodes = async () => {
+//   const res = await fetch("https://rickandmortyapi.com/api/episode");
+//   return res.json();
+// };
 
 const EpisodesRicky = () => {
   const { data, status } = useQuery("episodes", fetchEpisodes);
