@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../Styling/App.css";
 import { useQuery } from "react-query";
-import { ReactQueryDevtools } from "react-query-devtools";
 import RickAndMorty from "./RickAndMorty";
 import NavBar from "./NavBar";
 import EpisodesRicky from "./Episodes";
