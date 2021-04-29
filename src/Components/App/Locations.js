@@ -1,14 +1,9 @@
-import React, { useState } from "react";
-import { useQuery, QueryClient } from "react-query";
-import fetchLocations from './useQuery/fetchLocations';
-import fetchCharacters from './useQuery/fetchCharacters';
-import CharacterCard from './Cards/CharacterCard';
+import React from "react";
+import SpecificCharacterURL from "./SpecificCharacterURL";
 
-const LocationsRicky = () => {
-  const { data, status } = useQuery("locations", fetchLocations);
-  const { dataCharacter, statusCharacter } = useQuery("characterList", fetchCharacters);
+const LocationsRicky = ({ characterList, locationList, episodeList }) => {
+  const { data, status } = locationList;
 
-  console.log({data});
   return (
     <div>
       <h2>Locations</h2>
@@ -19,13 +14,19 @@ const LocationsRicky = () => {
         <>
           {data.results.map((dataPoint, dataIndex) => (
             <div key={dataIndex} className="card">
-              <h3>Location Name: {dataPoint.name}</h3>
-              <p> Type: {dataPoint.type}</p>
-              <p>Residents: {dataPoint.residents.map((resident, indexR)=>(
-                //   <CharacterCard dataPoint={resident} dataIndex={indexR} />
-                <div>{resident}</div>
-              ))
-              }</p>
+              <h3 key={`location{dataIndex}`}>
+                Location Name: {dataPoint.name}
+              </h3>
+              <p key={`type{dataIndex}`}> Type: {dataPoint.type}</p>
+              <div key={`residents{dataIndex}`}>
+                Residents:{" "}
+                {dataPoint.residents.map((resident, indexR) => (
+                  <>
+                    {/* {<SpecificCharacterURL indexUser={resident}/>} */}
+                    {/* shouldn't do the above as that is too many fetches --- ask Dave how to get from cache */}
+                  </>
+                ))}
+              </div>
             </div>
           ))}
         </>

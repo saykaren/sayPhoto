@@ -1,26 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Styling/App.css";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query-devtools";
-import RickAndMorty from "./RickAndMorty";
-import NavBar from './NavBar';
-import EpisodesRicky from './Episodes';
-import LocationsRicky from './Locations';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from "react-query";
+
+import MainApp from "./Main";
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  const [navBar, setNavBar] = useState('C');
-
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="App">
-        <NavBar setNavBar={setNavBar} navBar={navBar}/>
-        {navBar === 'C' && <RickAndMorty />}
-        {navBar === 'E' && <EpisodesRicky />}
-        {navBar === 'L' && <LocationsRicky />}
-      </div>
-      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+      <MainApp />
     </QueryClientProvider>
   );
 };
