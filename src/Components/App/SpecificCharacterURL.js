@@ -10,20 +10,28 @@ const fetchSpecificUser = async ({ queryKey }) => {
   return response.json();
 };
 
-const SpecificCharacterURL = ({ indexUser }) => {
-  const { isLoading, isError, data, error } = useQuery(
+const SpecificCharacterURL = ({ indexUser, setModal, modal }) => {
+  const { isLoading, isError, data, error, status } = useQuery(
     [`user`, indexUser],
     fetchSpecificUser
   );
 
   return (
     <>
-      {data && (
-        <div key={data.name} className="card">
-          <h3>Name: {data.name}</h3>
-          <img src={data.image} alt={data.name} />
-          <p>Origin: {data.origin.name}</p> <p>Status: {data.status}</p>
-        </div>
+      {status === "error" && <div>Error Fetching Data</div>}
+      {status === "Loading" && <div>Loading Data....</div>}
+      {status === "success" && (
+        <>
+          {data && (
+            <div key={`{data.name}{Math.random()}`} className="modal">
+              <button onClick={()=>setModal(!modal)}>X</button>
+              <h3>Name: {data.name}</h3>
+              <img src={data.image} alt={data.name} />
+              <p>Origin: {data.origin.name}</p> <p>Status: {data.status}</p>
+              
+            </div>
+          )}
+        </>
       )}
     </>
   );

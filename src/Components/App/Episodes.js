@@ -4,8 +4,9 @@ const EpisodesRicky = ({ characterList, locationList, episodeList }) => {
   const { data, status } = episodeList;
 
   return (
-    <div>
-      <h2>Episodes</h2>
+    <> <h2>Episodes</h2>
+    <div className="card_section">
+     
 
       {status === "error" && <div>Error Fetching Data</div>}
       {status === "Loading" && <div>Loading Data....</div>}
@@ -21,6 +22,7 @@ const EpisodesRicky = ({ characterList, locationList, episodeList }) => {
         </>
       )}
     </div>
+    </>
   );
 };
 
