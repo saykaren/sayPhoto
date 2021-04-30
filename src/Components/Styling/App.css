@@ -48,7 +48,6 @@ button:hover {
 .card h3 {
   margin: 10px 0;
   color: #ffff57;
- 
 }
 
 .card_section {
@@ -62,8 +61,7 @@ img {
   height: 120px;
 }
 
-
-.modal{
+.modal {
   position: fixed;
   border: 3px solid white;
   background-color: grey;
@@ -80,8 +78,4 @@ img {
 
 .modal-close {
   float: right;
-}
-
-.h2 {
-  width: 100vw;
 }
