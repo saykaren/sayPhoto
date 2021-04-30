@@ -15,13 +15,17 @@ const MainApp = () => {
   const characterList = useQuery("characterList", fetchCharacters);
   const locationList = useQuery("locations", fetchLocations);
   const episodeList = useQuery("episodes", fetchEpisodes);
+  const [modal, setModal] = useState(true);
 
   return (
     <div className="App">
-      <SpecificCharacterURL
-        indexUser={"https://rickandmortyapi.com/api/character/3"}
-      />
+   
       <NavBar setNavBar={setNavBar} navBar={navBar} />
+      {modal ? 
+        <SpecificCharacterURL
+          indexUser={"https://rickandmortyapi.com/api/character/3"} className={modal ? "modal" : "modal-close"} setModal={setModal} modal={modal}
+        /> : <button onClick={()=>setModal(!modal)}>?</button>
+      }
       {navBar === "C" && (
         <RickAndMorty
           characterList={characterList}
