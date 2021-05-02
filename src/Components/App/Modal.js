@@ -2,7 +2,6 @@ import React from "react";
 import SpecificCharacterURL from "./SpecificCharacterURL";
 
 const openSpecific = (pullUrl, setModal, modal) => {
-  console.log(pullUrl);
   return (
     <SpecificCharacterURL
       indexUser={pullUrl}

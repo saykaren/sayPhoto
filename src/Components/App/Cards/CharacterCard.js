@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import openSpecific from "./../Modal";
+import expand from "./../../Assets/expand.png";
 
 const CharacterCard = ({ dataPoint, dataIndex }) => {
   const [buttonActive, setButtonActive] = useState(false);
@@ -10,17 +11,18 @@ const CharacterCard = ({ dataPoint, dataIndex }) => {
       className="card"
       onClick={() => setButtonActive(!buttonActive)}
     >
-      {buttonActive ? (
+
+      <h3>Name: {dataPoint.name}</h3>
+      <span>{buttonActive ? (
         openSpecific(
           `https://rickandmortyapi.com/api/character/${dataPoint.id}`,
           setButtonActive,
           buttonActive
         )
       ) : (
-        <button onClick={() => setButtonActive(!buttonActive)}>Details</button>
-      )}
-      <h3>Name: {dataPoint.name}</h3>
-      <p>Origin: {dataPoint.origin.name}</p> <p>Status: {dataPoint.status}</p>
+        <img src={expand} onClick={() => setButtonActive(!buttonActive)} className="smallIcon" alt="expand"/>
+      
+      )}</span>
     </div>
   );
 };

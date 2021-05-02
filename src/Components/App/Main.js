@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import "../Styling/App.css";
 import { useQuery } from "react-query";
-import RickAndMorty from "./RickAndMorty";
+import CharactersSection from "./CharactersSection";
 import NavBar from "./NavBar";
 import EpisodesRicky from "./Episodes";
 import LocationsRicky from "./Locations";
-import SpecificCharacterURL from "./SpecificCharacterURL";
 import fetchCharacters from "./useQuery/fetchCharacters";
 import fetchLocations from "./useQuery/fetchLocations";
 import fetchEpisodes from "./useQuery/fetchEpisodes";
-import openSpecific from "./Modal";
+
 
 const MainApp = () => {
 
@@ -35,7 +34,7 @@ const MainApp = () => {
       {/* {modal ? openSpecific("https://rickandmortyapi.com/api/character/3", setModal, modal) : <button onClick={()=>setModal(!modal)}>?</button>} */}
 
       {navBar === "C" && (
-        <RickAndMorty
+        <CharactersSection
           characterList={characterList}
           locationList={locationList}
           episodeList={episodeList}
