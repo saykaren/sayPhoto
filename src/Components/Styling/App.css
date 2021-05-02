@@ -9,7 +9,6 @@ body {
   text-align: center;
 }
 .App {
-  width: 960px;
   margin: 0 auto;
 }
 h1 {
@@ -60,8 +59,6 @@ button:hover {
   justify-content: space-around;
 }
 
-
 img {
   height: 120px;
 }
-

@@ -9,29 +9,15 @@ import fetchCharacters from "./useQuery/fetchCharacters";
 import fetchLocations from "./useQuery/fetchLocations";
 import fetchEpisodes from "./useQuery/fetchEpisodes";
 
-
 const MainApp = () => {
-
-  const id = 77;
-  const pageURL = "helloPage77";
   const [navBar, setNavBar] = useState("C");
-  const characterList = useQuery(["characterList", id, pageURL], fetchCharacters, {staleTime: 10000, cacheTime: 100000});
-  const locationList = useQuery(["locations", "id", "pageURL"], fetchLocations, {staleTime: 10000, cacheTime: 100000});
-  const episodeList = useQuery(["episodes", "id", "pageURL"], fetchEpisodes, {staleTime: 10000, cacheTime: 100000},);
-  const [modal, setModal] = useState(false);
-
-  // const openSpecific = (pullUrl)=>{
-  //   console.log(pullUrl);
-  //   return(    <SpecificCharacterURL
-  //     indexUser={pullUrl} className={modal ? "modal" : "modal-close"} setModal={setModal} modal={modal}
-  //   /> )
-  // }
+  const characterList = useQuery(["characterList"], fetchCharacters);
+  const locationList = useQuery(["locations", "id", "pageURL"], fetchLocations);
+  const episodeList = useQuery(["episodes", "id", "pageURL"], fetchEpisodes);
 
   return (
     <div className="App">
-   
-      <NavBar setNavBar={setNavBar} navBar={navBar} />
-      {/* {modal ? openSpecific("https://rickandmortyapi.com/api/character/3", setModal, modal) : <button onClick={()=>setModal(!modal)}>?</button>} */}
+      <NavBar setNavBar={setNavBar} navBar={navBar} className="navBar"/>
 
       {navBar === "C" && (
         <CharactersSection
@@ -55,7 +41,7 @@ const MainApp = () => {
         />
       )}
 
-      {/* <ReactQueryDevtools initialIsOpen={false} />  */}
+
     </div>
   );
 };
