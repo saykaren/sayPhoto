@@ -1,4 +1,6 @@
-const fetchCharacters = async () => {
+const fetchCharacters = async (key, id, pageURL) => {
+    console.log(id);
+    console.log(pageURL);
     const res = await fetch("https://rickandmortyapi.com/api/character");
     return res.json();
   };
@@ -6,3 +8,11 @@ const fetchCharacters = async () => {
   export default fetchCharacters;
 
 
+// const fetchSpecificUser = async ({ queryKey }) => {
+//   const [, id] = queryKey;
+//   const response = await fetch(`${id}`);
+//   if (!response.ok) {
+//     throw new Error("Network response was not ok");
+//   }
+//   return response.json();
+// };
