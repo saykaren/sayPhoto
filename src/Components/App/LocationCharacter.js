@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useQuery } from "react-query";
 
 const fetchSpecificUser = async ({ queryKey }) => {
@@ -11,16 +11,15 @@ const fetchSpecificUser = async ({ queryKey }) => {
   return response.json();
 };
 
-const SpecificCharacterURL = ({
+const LocationCharacter = ({
   indexUser,
-  setModal,
-  modal,
   specificPageURL,
 }) => {
-  const { isLoading, isError, data, error, status } = useQuery(
+  const {data, status } = useQuery(
     [`user`, indexUser, specificPageURL],
     fetchSpecificUser
   );
+  const [thisModal, setThisModal] =useState(true);
 
   return (
     <>
@@ -29,8 +28,10 @@ const SpecificCharacterURL = ({
       {status === "success" && (
         <>
           {data && (
-            <div key={`{data.name}{Math.random()}`} className="modal">
-              <button onClick={() => setModal(!modal)}>X</button>
+            <div key={`{data.name}{Math.random()}`} 
+            // className="modal"
+            >
+              {/* <button onClick={() => setThisModal(!thisModal)}>X</button> */}
               <h3>Name: {data.name}</h3>
               <img src={data.image} alt={data.name} />
               <p>Origin: {data.origin.name}</p> <p>Status: {data.status}</p>
@@ -42,4 +43,5 @@ const SpecificCharacterURL = ({
   );
 };
 
-export default SpecificCharacterURL;
+export default LocationCharacter;
+
