@@ -34,7 +34,7 @@ const SpecificCharacterURL = ({
               <h3>Name: {data.name}</h3>
               <img src={data.image} alt={data.name} />
               <p>Origin: {data.origin.name}</p> <p>Status: {data.status}</p>
-              <p>Gender: {data.gender}</p> <p>Status: {data.status}</p>
+              <p>Gender: {data.gender}</p> 
             </div>
           )}
         </>
