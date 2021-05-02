@@ -1,3 +1,6 @@
+@import "./Character.css";
+@import "./Modal.css";
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -57,25 +60,8 @@ button:hover {
   justify-content: space-around;
 }
 
+
 img {
   height: 120px;
 }
 
-.modal {
-  position: fixed;
-  border: 3px solid white;
-  background-color: grey;
-  box-shadow: -2rem 2rem 2rem rgba(white, 0.2);
-  opacity: 0.95;
-  border-radius: 12px;
-  padding: 1rem;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: black;
-}
-
-.modal-close {
-  float: right;
-}
