@@ -9,9 +9,23 @@ const LocationsCard = (data) => {
   console.log({ check });
   return (
     <div onClick={() => setActive(!active)}>
-
-      {active ? <span>  Residents: </span> : <span>  Residents: Click for details <img src={infoIcon} alt="icon" className="smallIcon"/></span>}
+      {active ? (
+        <span> Residents: {data.residents.length} Residents </span>
+      ) : (
+        <span>
+          {" "}
+          Residents: {data.residents.length}{" "}
+          {data.residents.length < 10 && (
+            <>
+              {" "}
+              Click for details{" "}
+              <img src={infoIcon} alt="icon" className="smallIcon" />
+            </>
+          )}
+        </span>
+      )}
       {active &&
+        data.residents.length < 10 &&
         data.residents.map((charURL, indexChar) => (
           <div key={indexChar}>
             <LocationCharacter indexUser={charURL} />
