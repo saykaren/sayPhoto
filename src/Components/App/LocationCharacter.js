@@ -11,15 +11,8 @@ const fetchSpecificUser = async ({ queryKey }) => {
   return response.json();
 };
 
-const LocationCharacter = ({
-  indexUser,
-  specificPageURL,
-}) => {
-  const {data, status } = useQuery(
-    [`user`, indexUser, specificPageURL],
-    fetchSpecificUser
-  );
-  const [thisModal, setThisModal] =useState(true);
+const LocationCharacter = ({ indexUser }) => {
+  const { data, status } = useQuery([`user`, indexUser], fetchSpecificUser);
 
   return (
     <>
@@ -31,7 +24,7 @@ const LocationCharacter = ({
             <div key={`{data.name}{Math.random()}`} 
             // className="modal"
             >
-              {/* <button onClick={() => setThisModal(!thisModal)}>X</button> */}
+              
               <h3>Name: {data.name}</h3>
               <img src={data.image} alt={data.name} />
               <p>Origin: {data.origin.name}</p> <p>Status: {data.status}</p>
@@ -42,6 +35,7 @@ const LocationCharacter = ({
     </>
   );
 };
+
 
 export default LocationCharacter;
 

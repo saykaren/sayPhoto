@@ -1,12 +1,8 @@
-import React, { useState } from "react";
-
-import LocationCharacter from "./LocationCharacter";
+import React from "react";
 import LocationModal from "./LocationModal";
 
 const LocationsRicky = ({ characterList, locationList, episodeList }) => {
   const { data, status } = locationList;
-  const [residentsShow, setResidentsShow] = useState(false);
-  const [activeButton, setActiveButton] = useState(false);
 
   return (
     <>
@@ -32,18 +28,7 @@ const LocationsRicky = ({ characterList, locationList, episodeList }) => {
                     Created: {dataPoint.created.slice(0, 10)}
                   </p>
                   <div key={`residents{dataIndex}`}>
-                   
-                    {/* {residentsShow ? (
-                      <div onClick={() => setResidentsShow(!residentsShow)}>
-                        WHOOPS YOU SAW THAT?
-                      </div>
-                    ) : (
-                      <div onClick={() => setResidentsShow(!residentsShow)}>
-                        COMING SOON!
-                      </div>
-                    )} */}
-             <LocationModal residents={dataPoint.residents} />
-                      
+                    <LocationModal residents={dataPoint.residents} />
                   </div>
                 </section>
               </div>

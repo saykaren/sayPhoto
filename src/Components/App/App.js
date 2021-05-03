@@ -1,9 +1,6 @@
 import React from "react";
 import "../Styling/App.scss";
-import {
-  QueryClient,
-  QueryClientProvider,
-} from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import MainApp from "./Main";
 import {ReactQueryDevtools} from 'react-query/devtools';
