@@ -1,8 +1,10 @@
+@import "./variables.scss";
+
 .modal {
     position: fixed;
     border: 3px solid white;
-    background-color: #222;
-    box-shadow: 5px 3px honeydew;
+    background-color: $secondary-color;
+    box-shadow: 5px 3px $shadow;
     opacity: 0.85;
     border-radius: 12px;
     padding: 1rem;

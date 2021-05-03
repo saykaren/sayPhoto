@@ -1,25 +1,26 @@
-@import "./Character.css";
-@import "./Modal.css";
+@import "./Character.scss";
+@import "./Modal.scss";
+@import "./variables.scss";
 
 body {
   margin: 0;
   font-family: sans-serif;
-  background: #222;
-  color: #ddd;
+  background: $background-color;
+  color: $text-light;
   text-align: center;
 }
 .App {
   margin: 0 auto;
 }
 h1 {
-  color: #ffff57;
+  color: $primary-color;
   font-size: 4em;
   letter-spacing: 2px;
 }
 button {
   margin: 0 10px;
   background: transparent;
-  border: 3px solid #ccc;
+  border: 3px solid $text-light;
   border-radius: 20px;
   padding: 10px;
   color: #ccc;
@@ -27,8 +28,8 @@ button {
   cursor: pointer;
 }
 button:hover {
-  color: #fff;
-  border-color: #fff;
+  color: $text-hover;
+  border-color: $text-hover;
 }
 .content {
   text-align: left;
@@ -36,7 +37,7 @@ button:hover {
 
 .card {
   padding: 8px 16px;
-  background: #1b1b1b;
+  background: $third-color;
   margin: 16px 0;
   border-radius: 20px;
   width: 310px;
@@ -44,12 +45,12 @@ button:hover {
 
 .card p {
   margin: 6px 0;
-  color: #999;
+  //   color: #999;
 }
 
 .card h3 {
   margin: 10px 0;
-  color: #ffff57;
+  color: $primary-color;
 }
 
 .card_section {

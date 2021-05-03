@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../Styling/App.css";
 import { useQuery } from "react-query";
 import CharactersSection from "./CharactersSection";
 import NavBar from "./NavBar";

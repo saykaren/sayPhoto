@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styling/App.css";
+import "../Styling/App.scss";
 import {
   QueryClient,
   QueryClientProvider,
