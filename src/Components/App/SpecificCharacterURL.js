@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import minimizeIcon from "./../Assets/minimize_white.png";
 
 const fetchSpecificUser = async ({ queryKey }) => {
   const [, id] = queryKey;
@@ -30,7 +31,8 @@ const SpecificCharacterURL = ({
         <>
           {data && (
             <div key={`{data.name}{Math.random()}`} className="modal">
-              <button onClick={() => setModal(!modal)}>X</button>
+              <img src={minimizeIcon} alt="minimize" onClick={() => setModal(!modal)} className="smallIcon floatRight"/>
+              {/* <button >X</button> */}
               <h3>Name: {data.name}</h3>
               <img src={data.image} alt={data.name} />
               <p>Origin: {data.origin.name}</p> <p>Status: {data.status}</p>

@@ -16,7 +16,7 @@ const MainApp = () => {
 
   return (
     <div className="App">
-      <NavBar setNavBar={setNavBar} navBar={navBar} className="navBar"/>
+      <NavBar setNavBar={setNavBar} navBar={navBar} className="navBar" />
 
       {navBar === "C" && (
         <CharactersSection
@@ -39,8 +39,6 @@ const MainApp = () => {
           episodeList={episodeList}
         />
       )}
-
-
     </div>
   );
 };
