@@ -25,15 +25,16 @@ const MainApp = () => {
           episodeList={episodeList}
         />
       )}
-      {navBar === "E" && (
-        <EpisodesRicky
+
+      {navBar === "L" && (
+        <LocationsRicky
           characterList={characterList}
           locationList={locationList}
           episodeList={episodeList}
         />
       )}
-      {navBar === "L" && (
-        <LocationsRicky
+            {navBar === "E" && (
+        <EpisodesRicky
           characterList={characterList}
           locationList={locationList}
           episodeList={episodeList}
