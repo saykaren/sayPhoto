@@ -1,6 +1,8 @@
 @import "./Character.scss";
 @import "./Modal.scss";
 @import "./variables.scss";
+@import "./Footer.scss";
+@import "./NavBar.scss";
 
 body {
   margin: 0;
@@ -11,6 +13,7 @@ body {
 }
 .App {
   margin: 0 auto;
+  
 }
 h1 {
   color: $primary-color;
@@ -45,7 +48,6 @@ button:hover {
 
 .card p {
   margin: 6px 0;
-  //   color: #999;
 }
 
 .card h3 {
@@ -62,4 +64,8 @@ button:hover {
 
 img {
   height: 120px;
+}
+
+.main_app {
+  margin: 20px;
 }

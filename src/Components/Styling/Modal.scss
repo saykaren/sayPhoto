@@ -1,26 +1,23 @@
 @import "./variables.scss";
 
 .modal {
-    position: fixed;
-    border: 3px solid white;
-    background-color: $secondary-color;
-    box-shadow: 5px 3px $shadow;
-    opacity: 0.85;
-    border-radius: 12px;
-    padding: 1rem;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    width: 250px;
-    
-  }
-  
-  .modal-close {
-    float: right;
-  }
+  position: fixed;
+  background-color: $secondary-color;
+  box-shadow: 0 2.8px 2.7px $shadow;
+  opacity: 0.9;
+  border-radius: 12px;
+  padding: 1rem;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+}
 
-  .floatRight {
-    float: right;
-  }
-  
+.modal-close {
+  float: right;
+}
+
+.floatRight {
+  float: right;
+}
