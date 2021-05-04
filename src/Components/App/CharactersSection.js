@@ -1,12 +1,11 @@
 import React from "react";
 import CharacterCard from "./Cards/CharacterCard";
 
-const RickAndMorty = ({ characterList, locationList, episodeList }) => {
+const CharactersSection = ({ characterList, locationList, episodeList }) => {
   const { data, status } = characterList;
   return (
     <div >
       <h2>Rick And Morty</h2>
-
       {status === "error" && <div>Error Fetching Data</div>}
       {status === "Loading" && <div>Loading Data....</div>}
       {status === "success" && (
@@ -20,4 +19,4 @@ const RickAndMorty = ({ characterList, locationList, episodeList }) => {
   );
 };
 
-export default RickAndMorty;
+export default CharactersSection;
