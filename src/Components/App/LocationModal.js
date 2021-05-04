@@ -1,36 +1,40 @@
 import React, { useState } from "react";
-import { act } from "react-dom/test-utils";
 import LocationCharacter from "./LocationCharacter";
 import infoIcon from "./../Assets/Info_white.png";
 
 const LocationsCard = (data) => {
   const [active, setActive] = useState(false);
-  const check = data.residents;
-  console.log({ check });
+
   return (
     <div onClick={() => setActive(!active)}>
       {active ? (
-        <span> Residents: {data.residents.length} Residents </span>
+        <span> {data.residents.length} Residents </span>
       ) : (
         <span>
-          {" "}
-          Residents: {data.residents.length}{" "}
-          {data.residents.length < 10 && (
-            <>
-              {" "}
-              Click for details{" "}
-              <img src={infoIcon} alt="icon" className="smallIcon" />
-            </>
-          )}
+          <div> {data.residents.length} Residents</div>
+
+          <div>
+            Click for details
+            <img src={infoIcon} alt="icon" className="smallIcon" />
+          </div>
         </span>
       )}
       {active &&
-        data.residents.length < 10 &&
+        data.residents.length <= 10 &&
         data.residents.map((charURL, indexChar) => (
           <div key={indexChar}>
             <LocationCharacter indexUser={charURL} />
           </div>
         ))}
+
+      {active && data.residents.length > 10 && (
+        <div>
+          <LocationCharacter indexUser={data.residents[0]} />
+          <div className="details">
+            **Due to volume only one resident shown**
+          </div>
+        </div>
+      )}
     </div>
   );
 };

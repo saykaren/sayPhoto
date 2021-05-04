@@ -18,7 +18,7 @@ const SpecificCharacterURL = ({
   modal,
   specificPageURL,
 }) => {
-  const { isLoading, isError, data, error, status } = useQuery(
+  const { data, status } = useQuery(
     [`user`, indexUser, specificPageURL],
     fetchSpecificUser
   );
@@ -30,9 +30,8 @@ const SpecificCharacterURL = ({
       {status === "success" && (
         <>
           {data && (
-            <div key={`{data.name}{Math.random()}`} className="modal">
+            <div className="modal">
               <img src={minimizeIcon} alt="minimize" onClick={() => setModal(!modal)} className="smallIcon floatRight"/>
-              {/* <button >X</button> */}
               <h3>Name: {data.name}</h3>
               <img src={data.image} alt={data.name} />
               <p>Origin: {data.origin.name}</p> <p>Status: {data.status}</p>

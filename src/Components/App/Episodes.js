@@ -1,8 +1,8 @@
 import React from "react";
 
-const EpisodesRicky = ({ characterList, locationList, episodeList }) => {
+const EpisodesRicky = ({episodeList }) => {
   const { data, status } = episodeList;
-  console.log({ data });
+
   return (
     <>
       {" "}
