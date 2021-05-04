@@ -7,6 +7,7 @@ import LocationsRicky from "./Locations";
 import fetchCharacters from "./useQuery/fetchCharacters";
 import fetchLocations from "./useQuery/fetchLocations";
 import fetchEpisodes from "./useQuery/fetchEpisodes";
+import Footer from "./Footer";
 
 const MainApp = () => {
   const [navBar, setNavBar] = useState("C");
@@ -16,30 +17,33 @@ const MainApp = () => {
 
   return (
     <div className="App">
-      <NavBar setNavBar={setNavBar} navBar={navBar} className="navBar" />
+      <section className="main_app">
+        <NavBar setNavBar={setNavBar} navBar={navBar} className="navBar" />
 
-      {navBar === "C" && (
-        <CharactersSection
-          characterList={characterList}
-          locationList={locationList}
-          episodeList={episodeList}
-        />
-      )}
+        {navBar === "C" && (
+          <CharactersSection
+            characterList={characterList}
+            locationList={locationList}
+            episodeList={episodeList}
+          />
+        )}
 
-      {navBar === "L" && (
-        <LocationsRicky
-          characterList={characterList}
-          locationList={locationList}
-          episodeList={episodeList}
-        />
-      )}
-            {navBar === "E" && (
-        <EpisodesRicky
-          characterList={characterList}
-          locationList={locationList}
-          episodeList={episodeList}
-        />
-      )}
+        {navBar === "L" && (
+          <LocationsRicky
+            characterList={characterList}
+            locationList={locationList}
+            episodeList={episodeList}
+          />
+        )}
+        {navBar === "E" && (
+          <EpisodesRicky
+            characterList={characterList}
+            locationList={locationList}
+            episodeList={episodeList}
+          />
+        )}
+      </section>
+      <Footer />
     </div>
   );
 };
