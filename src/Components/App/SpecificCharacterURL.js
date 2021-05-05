@@ -30,7 +30,7 @@ const SpecificCharacterURL = ({
       {status === "success" && (
         <section className="modalBackground" >
           {data && (
-            <div key={`{data.name}{Math.random()}`} className="modal">
+            <div className="modal">
               <img src={minimizeIcon} alt="minimize" onClick={() => setModal(!modal)} className="smallIcon floatRight"/>
  
               <h3>Name: {data.name}</h3>
