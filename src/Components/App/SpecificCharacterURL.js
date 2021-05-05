@@ -28,18 +28,22 @@ const SpecificCharacterURL = ({
       {status === "error" && <div>Error Fetching Data</div>}
       {status === "Loading" && <div>Loading Data....</div>}
       {status === "success" && (
-        <>
+        <section className="modalBackground" onClick={console.log("click")}>
           {data && (
             <div key={`{data.name}{Math.random()}`} className="modal">
-              <img src={minimizeIcon} alt="minimize" onClick={() => setModal(!modal)} className="smallIcon floatRight"/>
-              {/* <button >X</button> */}
+              <img
+                src={minimizeIcon}
+                alt="minimize"
+                onClick={() => setModal(!modal)}
+                className="smallIcon floatRight"
+              />
               <h3>Name: {data.name}</h3>
               <img src={data.image} alt={data.name} />
               <p>Origin: {data.origin.name}</p> <p>Status: {data.status}</p>
-              <p>Gender: {data.gender}</p> 
+              <p>Gender: {data.gender}</p>
             </div>
           )}
-        </>
+        </section>
       )}
     </>
   );
