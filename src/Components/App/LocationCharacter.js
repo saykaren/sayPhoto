@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { useQuery } from "react-query";
 
 const fetchSpecificUser = async ({ queryKey }) => {
@@ -21,10 +21,7 @@ const LocationCharacter = ({ indexUser }) => {
       {status === "success" && (
         <>
           {data && (
-            <div key={`{data.name}{Math.random()}`} 
-            // className="modal"
-            >
-              
+            <div key={`{data.name}{Math.random()}`}>
               <h3>Name: {data.name}</h3>
               <img src={data.image} alt={data.name} />
               <p>Origin: {data.origin.name}</p> <p>Status: {data.status}</p>
@@ -36,6 +33,4 @@ const LocationCharacter = ({ indexUser }) => {
   );
 };
 
-
 export default LocationCharacter;
-
