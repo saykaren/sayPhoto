@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/sayPhoto/static/css/main.c1149250.chunk.css",
-    "main.js": "/sayPhoto/static/js/main.0c9ec5bf.chunk.js",
-    "main.js.map": "/sayPhoto/static/js/main.0c9ec5bf.chunk.js.map",
+    "main.css": "/sayPhoto/static/css/main.77019b50.chunk.css",
+    "main.js": "/sayPhoto/static/js/main.ca6d66bb.chunk.js",
+    "main.js.map": "/sayPhoto/static/js/main.ca6d66bb.chunk.js.map",
     "runtime-main.js": "/sayPhoto/static/js/runtime-main.33782206.js",
     "runtime-main.js.map": "/sayPhoto/static/js/runtime-main.33782206.js.map",
     "static/js/2.865dfb4d.chunk.js": "/sayPhoto/static/js/2.865dfb4d.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.b4f0bee0.chunk.js": "/sayPhoto/static/js/3.b4f0bee0.chunk.js",
     "static/js/3.b4f0bee0.chunk.js.map": "/sayPhoto/static/js/3.b4f0bee0.chunk.js.map",
     "index.html": "/sayPhoto/index.html",
-    "static/css/main.c1149250.chunk.css.map": "/sayPhoto/static/css/main.c1149250.chunk.css.map",
+    "static/css/main.77019b50.chunk.css.map": "/sayPhoto/static/css/main.77019b50.chunk.css.map",
     "static/js/2.865dfb4d.chunk.js.LICENSE.txt": "/sayPhoto/static/js/2.865dfb4d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.33782206.js",
     "static/js/2.865dfb4d.chunk.js",
-    "static/css/main.c1149250.chunk.css",
-    "static/js/main.0c9ec5bf.chunk.js"
+    "static/css/main.77019b50.chunk.css",
+    "static/js/main.ca6d66bb.chunk.js"
   ]
 }
