@@ -28,17 +28,18 @@ const SpecificCharacterURL = ({
       {status === "error" && <div>Error Fetching Data</div>}
       {status === "Loading" && <div>Loading Data....</div>}
       {status === "success" && (
-        <>
+        <section className="modalBackground" >
           {data && (
             <div className="modal">
               <img src={minimizeIcon} alt="minimize" onClick={() => setModal(!modal)} className="smallIcon floatRight"/>
+ 
               <h3>Name: {data.name}</h3>
               <img src={data.image} alt={data.name} />
               <p>Origin: {data.origin.name}</p> <p>Status: {data.status}</p>
               <p>Gender: {data.gender}</p> 
             </div>
           )}
-        </>
+        </section>
       )}
     </>
   );
