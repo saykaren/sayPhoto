@@ -1,8 +1,9 @@
-import React from "react";
-import LocationModal from "./LocationModal";
+import React, { useState } from "react";
+import MultipleCharacter from "./MultipleCharacter";
 
 const LocationsRicky = ({ characterList, locationList, episodeList }) => {
   const { data, status } = locationList;
+  const testing = data.results.residents;
 
   return (
     <>
@@ -27,8 +28,12 @@ const LocationsRicky = ({ characterList, locationList, episodeList }) => {
                     {" "}
                     Created: {dataPoint.created.slice(0, 10)}
                   </p>
-                  <div key={`residents{dataIndex}`}>
-                    <LocationModal residents={dataPoint.residents} />
+                  <div>
+                    <MultipleCharacter
+                      indexUser={dataPoint.residents.map(
+                        (urlResident, index) => `${urlResident.slice(42)}`
+                      )}
+                    />
                   </div>
                 </section>
               </div>
