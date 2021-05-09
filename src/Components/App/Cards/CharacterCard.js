@@ -5,7 +5,7 @@ import minimizeIcon from "./../../Assets/minimize_white.png";
 
 const CharacterCard = ({ dataPoint, dataIndex }) => {
   const [buttonActive, setButtonActive] = useState(false);
-  console.log({ dataPoint });
+
   return (
     <div
       key={dataIndex}

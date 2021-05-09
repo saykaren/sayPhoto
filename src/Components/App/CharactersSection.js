@@ -1,7 +1,7 @@
 import React from "react";
 import CharacterCard from "./Cards/CharacterCard";
 
-const CharactersSection = ({ characterList, locationList, episodeList }) => {
+const CharactersSection = ({ characterList}) => {
   const { data, status } = characterList;
   return (
     <div >
@@ -11,7 +11,7 @@ const CharactersSection = ({ characterList, locationList, episodeList }) => {
       {status === "success" && (
         <div className="card_section">
           {data.results.map((dataPoint, dataIndex) => (
-            <CharacterCard dataPoint={dataPoint} dataIndex={dataIndex} />
+            <CharacterCard dataPoint={dataPoint} dataIndex={dataIndex} key={`${dataIndex}${Math.random()}`}/>
           ))}
         </div>
       )}
