@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import MultipleCharacter from "./MultipleCharacter";
 
-const LocationsRicky = ({ characterList, locationList, episodeList }) => {
+const LocationsRicky = ({ locationList }) => {
   const { data, status } = locationList;
-  const testing = data.results.residents;
 
   return (
     <>
