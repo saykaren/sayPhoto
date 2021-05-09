@@ -19,7 +19,7 @@ const MainApp = () => {
     <div className="App">
       <section className="main_app">
         <NavBar setNavBar={setNavBar} navBar={navBar} className="navBar" />
-
+    
         {navBar === "C" && (
           <CharactersSection
             characterList={characterList}

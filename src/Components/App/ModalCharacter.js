@@ -1,19 +1,15 @@
 import React, { useState } from "react";
+import infoIcon from "./../Assets/Info_white.png";
+import minimizeIcon from "./../Assets/minimize_white.png";
 
-import infoIcon from "./../../Assets/Info_white.png";
-import minimizeIcon from "./../../Assets/minimize_white.png";
-
-const CharacterCard = ({ dataPoint, dataIndex }) => {
+const ModalCharacter = ({ dataDetails }) => {
   const [buttonActive, setButtonActive] = useState(false);
 
-
   return (
-    <div
-      key={dataIndex}
-      className="card alignTogether"
-      onClick={() => setButtonActive(!buttonActive)}
-    >
-      <h3>Name: {dataPoint.name}</h3>
+    <>
+      <h3 onClick={() => setButtonActive(!buttonActive)}>
+        Name: {dataDetails.name}
+      </h3>
       <span>
         {buttonActive ? (
           <section className="modalBackground">
@@ -24,11 +20,11 @@ const CharacterCard = ({ dataPoint, dataIndex }) => {
                 onClick={() => setButtonActive(!buttonActive)}
                 className="smallIcon floatRight"
               />
-              <h3>Name: {dataPoint.name}</h3>
-              <img src={dataPoint.image} alt={dataPoint.name} />
-              <p>Origin: {dataPoint.origin.name}</p>{" "}
-              <p>Status: {dataPoint.status}</p>
-              <p>Gender: {dataPoint.gender}</p>
+              <h3>Name: {dataDetails.name} </h3>
+              <img src={dataDetails.image} alt={dataDetails.name} />
+              <p>Origin: {dataDetails.origin.name}</p>{" "}
+              <p>Status: {dataDetails.status}</p>
+              <p>Gender: {dataDetails.gender}</p>
             </div>
           </section>
         ) : (
@@ -40,8 +36,8 @@ const CharacterCard = ({ dataPoint, dataIndex }) => {
           />
         )}
       </span>
-    </div>
+    </>
   );
 };
 
-export default CharacterCard;
+export default ModalCharacter;
