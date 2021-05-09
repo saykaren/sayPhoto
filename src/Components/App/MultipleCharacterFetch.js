@@ -39,7 +39,6 @@ const MultipleCharacterFetch = ({ string }) => {
             ))}
         </>
       )}
-      testing
     </>
   );
 };
