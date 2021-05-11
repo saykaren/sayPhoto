@@ -1,5 +1,6 @@
 import React from "react";
 import Pagination from "./Pagination";
+import MultipleCharacter from "./MultipleCharacter";
 
 const EpisodesRicky = ({ episodeList, setEpisodeURL }) => {
   const { data, status } = episodeList;
@@ -18,6 +19,13 @@ const EpisodesRicky = ({ episodeList, setEpisodeURL }) => {
                 <h3>Episode Name: {dataPoint.name}</h3>
                 <p>Episode Number: {dataPoint.episode}</p>
                 <p>Aired: {dataPoint.air_date}</p>
+                <MultipleCharacter
+                  buttonName={"Characters"}
+                  buttonNoShow={"No Characters"}
+                  indexUser={dataPoint.characters.map(
+                    (urlResident, index) => `${urlResident.slice(42)}`
+                  )}
+                />
               </div>
             ))}
           </div>

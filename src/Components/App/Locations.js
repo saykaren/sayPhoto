@@ -32,6 +32,8 @@ const LocationsRicky = ({ locationList, setLocationURL }) => {
                   </p>
                   <div>
                     <MultipleCharacter
+                      buttonName={"Residents"}
+                      buttonNoShow={"Uninhabited"}
                       indexUser={dataPoint.residents.map(
                         (urlResident, index) => `${urlResident.slice(42)}`
                       )}
