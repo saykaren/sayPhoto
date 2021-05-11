@@ -7,9 +7,11 @@ const ModalCharacter = ({ dataDetails }) => {
 
   return (
     <>
-      <h3 onClick={() => setButtonActive(!buttonActive)}>
-        Name: {dataDetails.name}
-      </h3>
+      <section onClick={() => setButtonActive(!buttonActive)} className="card_Details">
+        <h3>Name: {dataDetails.name}</h3>
+        <p>Gender: {dataDetails.gender}</p>
+        <p>Species: {dataDetails.species}</p>
+      </section>
       <span>
         {buttonActive ? (
           <section className="modalBackground">
@@ -23,8 +25,10 @@ const ModalCharacter = ({ dataDetails }) => {
               <h3>Name: {dataDetails.name} </h3>
               <img src={dataDetails.image} alt={dataDetails.name} />
               <p>Origin: {dataDetails.origin.name}</p>{" "}
-              <p>Status: {dataDetails.status}</p>
+              <p>Dead Or Alive: {dataDetails.status}</p>
               <p>Gender: {dataDetails.gender}</p>
+              <p>Type: {dataDetails.type}</p>
+              <p>Type: {dataDetails.type}</p>
             </div>
           </section>
         ) : (
