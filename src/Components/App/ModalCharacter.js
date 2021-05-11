@@ -7,7 +7,10 @@ const ModalCharacter = ({ dataDetails }) => {
 
   return (
     <>
-      <section onClick={() => setButtonActive(!buttonActive)} className="card_Details">
+      <section
+        onClick={() => setButtonActive(!buttonActive)}
+        className="card_Details"
+      >
         <h3>Name: {dataDetails.name}</h3>
         <p>Gender: {dataDetails.gender}</p>
         <p>Species: {dataDetails.species}</p>
@@ -26,9 +29,8 @@ const ModalCharacter = ({ dataDetails }) => {
               <img src={dataDetails.image} alt={dataDetails.name} />
               <p>Origin: {dataDetails.origin.name}</p>{" "}
               <p>Dead Or Alive: {dataDetails.status}</p>
-              <p>Gender: {dataDetails.gender}</p>
-              <p>Type: {dataDetails.type}</p>
-              <p>Type: {dataDetails.type}</p>
+              {dataDetails.gender && <p>Gender: {dataDetails.gender}</p>}
+              {dataDetails.type && <p>Type: {dataDetails.type}</p>}
             </div>
           </section>
         ) : (
