@@ -8,9 +8,15 @@ const MultipleCharacter = ({ indexUser }) => {
     <>
       {whoAmI ? (
         <>
-          <button onClick={() => setWhoAmI(!whoAmI)}>Residents</button>
-          {indexUser.join().toString() !== undefined && (
-            <MultipleCharacterFetch string={indexUser.join().toString()} />
+          {indexUser.join().toString() === "" ? (
+            <h3>Uninhabited</h3>
+          ) : (
+            <>
+              <button onClick={() => setWhoAmI(!whoAmI)}>Residents</button>
+              {indexUser.join().toString() !== undefined && (
+                <MultipleCharacterFetch string={indexUser.join().toString()} />
+              )}
+            </>
           )}
         </>
       ) : (

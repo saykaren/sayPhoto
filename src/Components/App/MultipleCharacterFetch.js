@@ -1,20 +1,9 @@
 import React from "react";
 import { useQuery } from "react-query";
-
-const fetchSpecificUser = async ({ queryKey }) => {
-  const [, id] = queryKey;
-
-  const response = await fetch(
-    `https://rickandmortyapi.com/api/character/${id}`
-  );
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
-  }
-  return response.json();
-};
+import fetchSpecificCharacters from "./useQuery/fetchSpecificCharacters"
 
 const MultipleCharacterFetch = ({ string }) => {
-  const { data, status } = useQuery([`user`, string], fetchSpecificUser);
+  const { data, status } = useQuery([`user`, string], fetchSpecificCharacters);
 
   return (
     <>

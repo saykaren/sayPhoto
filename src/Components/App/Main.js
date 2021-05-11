@@ -4,9 +4,7 @@ import CharactersSection from "./CharactersSection";
 import NavBar from "./NavBar";
 import EpisodesRicky from "./Episodes";
 import LocationsRicky from "./Locations";
-import fetchCharacters from "./useQuery/fetchCharacters";
-import fetchLocations from "./useQuery/fetchLocations";
-import fetchEpisodes from "./useQuery/fetchEpisodes";
+import fetchURL from "./useQuery/fetchURL";
 import Footer from "./Footer";
 
 const MainApp = () => {
@@ -22,13 +20,13 @@ const MainApp = () => {
   const [navBar, setNavBar] = useState("C");
   const characterList = useQuery(
     ["characterList", `${characterURL}`],
-    fetchCharacters
+    fetchURL
   );
   const locationList = useQuery(
     ["locations", `${locationURL}`],
-    fetchLocations
+    fetchURL
   );
-  const episodeList = useQuery(["episodes", `${episodeURL}`], fetchEpisodes);
+  const episodeList = useQuery(["episodes", `${episodeURL}`], fetchURL);
 
   return (
     <div className="App">
