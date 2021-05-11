@@ -1,17 +1,20 @@
 import React from "react";
 import MultipleCharacter from "./MultipleCharacter";
+import Pagination from "./Pagination";
 
-const LocationsRicky = ({ locationList }) => {
+const LocationsRicky = ({ locationList, setLocationURL }) => {
   const { data, status } = locationList;
 
   return (
     <>
       <h2>Locations</h2>
-      <div className="card_section">
-        {status === "error" && <div>Error Fetching Data</div>}
-        {status === "Loading" && <div>Loading Data....</div>}
-        {status === "success" && (
-          <>
+
+      {status === "error" && <div>Error Fetching Data</div>}
+      {status === "Loading" && <div>Loading Data....</div>}
+      {status === "success" && (
+        <>
+          <Pagination setState={setLocationURL} data={data} />
+          <div className="card_section">
             {data.results.map((dataPoint, dataIndex) => (
               <div key={dataIndex} className="card">
                 <h3 key={`location{dataIndex}`}>
@@ -37,9 +40,10 @@ const LocationsRicky = ({ locationList }) => {
                 </section>
               </div>
             ))}
-          </>
-        )}
-      </div>
+          </div>
+          <Pagination setState={setLocationURL} data={data} />
+        </>
+      )}
     </>
   );
 };

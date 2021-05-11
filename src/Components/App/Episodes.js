@@ -1,17 +1,18 @@
 import React from "react";
+import Pagination from "./Pagination";
 
-const EpisodesRicky = ({episodeList }) => {
+const EpisodesRicky = ({ episodeList, setEpisodeURL }) => {
   const { data, status } = episodeList;
 
   return (
     <>
-      {" "}
       <h2>Episodes</h2>
-      <div className="card_section">
-        {status === "error" && <div>Error Fetching Data</div>}
-        {status === "Loading" && <div>Loading Data....</div>}
-        {status === "success" && (
-          <>
+      {status === "error" && <div>Error Fetching Data</div>}
+      {status === "Loading" && <div>Loading Data....</div>}
+      {status === "success" && (
+        <>
+          <Pagination setState={setEpisodeURL} data={data} />
+          <div className="card_section">
             {data.results.map((dataPoint, dataIndex) => (
               <div key={dataIndex} className="card">
                 <h3>Episode Name: {dataPoint.name}</h3>
@@ -19,9 +20,10 @@ const EpisodesRicky = ({episodeList }) => {
                 <p>Aired: {dataPoint.air_date}</p>
               </div>
             ))}
-          </>
-        )}
-      </div>
+          </div>
+          <Pagination setState={setEpisodeURL} data={data} />
+        </>
+      )}
     </>
   );
 };
