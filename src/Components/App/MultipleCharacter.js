@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MultipleCharacterFetch from "./MultipleCharacterFetch";
 
-const MultipleCharacter = ({ indexUser }) => {
+const MultipleCharacter = ({ indexUser, buttonName, buttonNoShow }) => {
   const [whoAmI, setWhoAmI] = useState(false);
 
   return (
@@ -9,10 +9,10 @@ const MultipleCharacter = ({ indexUser }) => {
       {whoAmI ? (
         <>
           {indexUser.join().toString() === "" ? (
-            <h3>Uninhabited</h3>
+            <h3>{buttonNoShow}</h3>
           ) : (
             <>
-              <button onClick={() => setWhoAmI(!whoAmI)}>Residents</button>
+              <button onClick={() => setWhoAmI(!whoAmI)}>{buttonName}</button>
               {indexUser.join().toString() !== undefined && (
                 <MultipleCharacterFetch string={indexUser.join().toString()} />
               )}
@@ -20,7 +20,7 @@ const MultipleCharacter = ({ indexUser }) => {
           )}
         </>
       ) : (
-        <button onClick={() => setWhoAmI(!whoAmI)}>List of Residents</button>
+        <button onClick={() => setWhoAmI(!whoAmI)}>List of {buttonName}</button>
       )}
     </>
   );
