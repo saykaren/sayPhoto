@@ -1,5 +1,6 @@
-const fetchEpisodes = async () => {
-  const res = await fetch("https://rickandmortyapi.com/api/episode");
+const fetchEpisodes = async ({ queryKey }) => {
+  const [, id] = queryKey;
+  const res = await fetch(`${id}`);
   return res.json();
 };
 

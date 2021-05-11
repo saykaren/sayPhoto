@@ -1,5 +1,6 @@
-const fetchCharacters = async (key, id, pageURL) => {
-    const res = await fetch("https://rickandmortyapi.com/api/character");
+const fetchCharacters = async ({queryKey}) => {
+    const [ , id] = queryKey;
+    const res = await fetch(`${id}`);
     return res.json();
   };
 

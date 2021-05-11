@@ -1,6 +1,7 @@
-const fetchLocations = async () => {
-    const res = await fetch("https://rickandmortyapi.com/api/location");
-    return res.json();
-  };
+const fetchLocations = async ({ queryKey }) => {
+  const [, id] = queryKey;
+  const res = await fetch(`${id}`);
+  return res.json();
+};
 
-  export default fetchLocations;
+export default fetchLocations;
