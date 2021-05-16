@@ -17,21 +17,27 @@ const CharactersSection = ({
   return (
     <div>
       <h2>Rick And Morty</h2>
-      {status === "error" && <div>Error Fetching Data</div>}
+      {status === "error" && (
+        <div>
+          Error Fetching Data <button onClick={() => clearUp()}>Clear</button>
+        </div>
+      )}
       {status === "Loading" && <div>Loading Data....</div>}
       {status === "success" && (
         <>
-          <input
-            type="text"
-            id="name_input"
-            value={showData}
-            onChange={(e) => setShowData(e.target.value)}
-          />
-          <button onClick={() => setUniqueSpecificCharacterName(showData)}>
-            Submit
-          </button>
-          <button onClick={() => clearUp()}>Clear</button>
-          <div className="line"></div>
+          <section className="filter_section">
+            <input
+              type="text"
+              id="name_input"
+              value={showData}
+              onChange={(e) => setShowData(e.target.value)}
+              placeholder="Search"
+            />
+            <button onClick={() => setUniqueSpecificCharacterName(showData)}>
+              Submit
+            </button>
+            <button onClick={() => clearUp()}>Clear</button>
+          </section>
           <Pagination setState={setCharacterURL} data={data} />
 
           <div className="card_section">
