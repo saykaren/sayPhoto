@@ -1,16 +1,16 @@
 @import "./variables.scss";
 
 .smallIcon {
-    height: 20px;
+  height: 20px;
 }
 
 #name_input {
-    height: 31px;
+  height: 31px;
 }
 
-.line {
-    height: 10px;
-    background-color: $third-color;
-    margin: 10px;
-    opacity: 0.95;
+.filter_section {
+  background-color: $third-color;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 20px;
 }

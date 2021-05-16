@@ -1,6 +1,7 @@
 import React from "react";
 
 const Pagination = ({ setState, data }) => {
+  const regEx = /\d/g;
   return (
     <div className="pagination">
       <button
@@ -10,7 +11,8 @@ const Pagination = ({ setState, data }) => {
       >
         Previous
       </button>
-
+      {data.info.next ? data.info.next.match(regEx).join("") - 1 : 1} of{" "}
+      {data.info.pages}
       <button
         onClick={() => setState(data.info.next)}
         disabled={!data.info.next}
