@@ -25,16 +25,23 @@ button {
   margin: 0 10px;
   background: transparent;
   border: 3px solid $text-light;
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 10px;
   color: #ccc;
   font-size: 1.2em;
   cursor: pointer;
+
 }
-button:hover {
+.button:hover {
   color: $text-hover;
   border-color: $text-hover;
 }
+
+.button-disabled {
+  opacity: 0.6;
+  background-color: $secondary-color;
+}
+
 .content {
   text-align: left;
 }
@@ -66,7 +73,6 @@ button:hover {
 .card_Details {
   text-align: left;
 }
-
 
 img {
   height: 120px;
