@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import Pagination from "./Pagination";
 import ModalCharacter from "./ModalCharacter";
 
-const CharactersSection = ({
-  characterList,
-  setCharacterURL,
-  setUniqueSpecificCharacterName,
-}) => {
+const CharactersSection = ({ characterList, setCharacterURL }) => {
   const { data, status } = characterList;
   const [showData, setShowData] = useState("");
 
   const clearUp = () => {
-    setUniqueSpecificCharacterName("");
+    setCharacterURL("https://rickandmortyapi.com/api/character");
     setShowData("");
   };
   return (
@@ -33,7 +29,13 @@ const CharactersSection = ({
               onChange={(e) => setShowData(e.target.value)}
               placeholder="Search"
             />
-            <button onClick={() => setUniqueSpecificCharacterName(showData)}>
+            <button
+              onClick={() =>
+                setCharacterURL(
+                  `https://rickandmortyapi.com/api/character/?name=${showData}`
+                )
+              }
+            >
               Submit
             </button>
             <button onClick={() => clearUp()}>Clear</button>

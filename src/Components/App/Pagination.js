@@ -2,6 +2,7 @@ import React from "react";
 
 const Pagination = ({ setState, data }) => {
   const regEx = /\d/g;
+
   return (
     <div className="pagination">
       <button

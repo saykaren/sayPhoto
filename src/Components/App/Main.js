@@ -6,14 +6,10 @@ import EpisodesRicky from "./Episodes";
 import LocationsRicky from "./Locations";
 import fetchURL from "./useQuery/fetchURL";
 import Footer from "./Footer";
-import fetchFilter from "./useQuery/fetchFilter";
 
 const MainApp = () => {
-  const [characterURL, setCharacterURL] = useState(
-    "https://rickandmortyapi.com/api/character"
-  );
-  const [uniqueSpecificCharacterName, setUniqueSpecificCharacterName] =
-    useState("");
+  const characterBasicURL = "https://rickandmortyapi.com/api/character";
+  const [characterURL, setCharacterURL] = useState(characterBasicURL);
   const [episodeURL, setEpisodeURL] = useState(
     "https://rickandmortyapi.com/api/episode"
   );
@@ -21,15 +17,11 @@ const MainApp = () => {
     "https://rickandmortyapi.com/api/location"
   );
   const [navBar, setNavBar] = useState("C");
+  const locationList = useQuery(["locations", `${locationURL}`], fetchURL);
+  const episodeList = useQuery(["episodes", `${episodeURL}`], fetchURL);
   const characterList = useQuery(
     ["characterList", `${characterURL}`],
     fetchURL
-  );
-  const locationList = useQuery(["locations", `${locationURL}`], fetchURL);
-  const episodeList = useQuery(["episodes", `${episodeURL}`], fetchURL);
-  const characterSpecificList = useQuery(
-    ["characterUniqueList", `${uniqueSpecificCharacterName}`],
-    fetchFilter
   );
 
   return (
@@ -38,13 +30,8 @@ const MainApp = () => {
         <NavBar setNavBar={setNavBar} navBar={navBar} className="navBar" />
         {navBar === "C" && (
           <CharactersSection
-            characterList={
-              uniqueSpecificCharacterName === ""
-                ? characterList
-                : characterSpecificList
-            }
+            characterList={characterList}
             setCharacterURL={setCharacterURL}
-            setUniqueSpecificCharacterName={setUniqueSpecificCharacterName}
           />
         )}
         {navBar === "L" && (
