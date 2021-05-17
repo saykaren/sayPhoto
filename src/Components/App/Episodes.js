@@ -1,7 +1,6 @@
 import React from "react";
 import Pagination from "./Pagination";
 import MultipleCharacter from "./MultipleCharacter";
-import MultipleCharacterFetch from "./MultipleCharacterFetch";
 
 const EpisodesRicky = ({ episodeList, setEpisodeURL }) => {
   const { data, status } = episodeList;

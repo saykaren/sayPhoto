@@ -1,7 +1,6 @@
 import React from "react";
 import MultipleCharacter from "./MultipleCharacter";
 import Pagination from "./Pagination";
-import MultipleCharacterFetch from "./MultipleCharacterFetch";
 
 const LocationsRicky = ({ locationList, setLocationURL }) => {
   const { data, status } = locationList;
