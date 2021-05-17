@@ -16,7 +16,7 @@ const MultipleEpisodeFetch = ({ string, category }) => {
         <>
           {data.length === undefined && (
             <div key={`${data.name}${Math.random()}`}>
-              <h3>Name: {data.name}</h3>
+              <h3>{data.name}</h3>
               <p>
                 #{data.episode} {data.air_date}{" "}
               </p>
