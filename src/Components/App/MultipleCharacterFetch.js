@@ -1,9 +1,9 @@
 import React from "react";
 import { useQuery } from "react-query";
-import fetchSpecificCharacters from "./useQuery/fetchSpecificCharacters"
+import fetchSpecificGroup from "./useQuery/fetchSpecificGroup"
 
-const MultipleCharacterFetch = ({ string }) => {
-  const { data, status } = useQuery([`user`, string], fetchSpecificCharacters);
+const MultipleCharacterFetch = ({ string, category}) => {
+  const { data, status } = useQuery([`user`, string, category], fetchSpecificGroup);
 
   return (
     <>

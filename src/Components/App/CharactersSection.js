@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import Pagination from "./Pagination";
 import ModalCharacter from "./ModalCharacter";
+import MultipleEpisodes from "./MultipleEpisodes";
+import MultipleEpisodeFetch from "./MultipleEpisodeFetch";
 
 const CharactersSection = ({ characterList, setCharacterURL }) => {
   const { data, status } = characterList;
   const [showData, setShowData] = useState("");
+  const regEx = /\d/g;
 
   const clearUp = () => {
     setCharacterURL("https://rickandmortyapi.com/api/character");
@@ -47,6 +50,16 @@ const CharactersSection = ({ characterList, setCharacterURL }) => {
               data.results.map((dataPointFiltered, dataIndex) => (
                 <div key={dataIndex} className="card alignTogether">
                   <ModalCharacter dataDetails={dataPointFiltered} />
+                  <MultipleEpisodes
+                  buttonName={"Episodes"}
+                  buttonNoShow={"No Episodes"}
+                  indexUser={dataPointFiltered.episode.map(
+                    (urlEpisode, index) => `${urlEpisode.slice(40)}`
+                            
+                  )}
+                  category={"episode/"}
+                  resultComponent={MultipleEpisodeFetch}
+                />
                 </div>
               ))}
           </div>
