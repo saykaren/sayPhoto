@@ -9,14 +9,14 @@ import Footer from "./Footer";
 
 const MainApp = () => {
   const characterBasicURL = "https://rickandmortyapi.com/api/character";
+  const episodeBasicURL = "https://rickandmortyapi.com/api/episode";
+  const locationBasicURL = "https://rickandmortyapi.com/api/location";
+
   const [characterURL, setCharacterURL] = useState(characterBasicURL);
-  const [episodeURL, setEpisodeURL] = useState(
-    "https://rickandmortyapi.com/api/episode"
-  );
-  const [locationURL, setLocationURL] = useState(
-    "https://rickandmortyapi.com/api/location"
-  );
+  const [episodeURL, setEpisodeURL] = useState(episodeBasicURL);
+  const [locationURL, setLocationURL] = useState(locationBasicURL);
   const [navBar, setNavBar] = useState("C");
+  
   const locationList = useQuery(["locations", `${locationURL}`], fetchURL);
   const episodeList = useQuery(["episodes", `${episodeURL}`], fetchURL);
   const characterList = useQuery(

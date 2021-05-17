@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import MultipleCharacterFetch from "./MultipleCharacterFetch";
+import MultipleEpisodeFetch from "./MultipleEpisodeFetch";
 
-const MultipleCharacter = ({ indexUser, buttonName, buttonNoShow, category, resultComponent }) => {
+const MultipleEpisodes = ({ indexUser, buttonName, buttonNoShow, category, resultComponent }) => {
   const [whoAmI, setWhoAmI] = useState(false);
 
   return (
@@ -14,7 +14,7 @@ const MultipleCharacter = ({ indexUser, buttonName, buttonNoShow, category, resu
             <>
               <button onClick={() => setWhoAmI(!whoAmI)}>{buttonName}</button>
               {indexUser.join().toString() !== undefined && (
-                <MultipleCharacterFetch string={indexUser.join().toString()} category={category}/>
+                <MultipleEpisodeFetch string={indexUser.join().toString()} category={category}/>
               )}
             </>
           )}
@@ -26,4 +26,4 @@ const MultipleCharacter = ({ indexUser, buttonName, buttonNoShow, category, resu
   );
 };
 
-export default MultipleCharacter;
+export default MultipleEpisodes;

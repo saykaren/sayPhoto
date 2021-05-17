@@ -1,6 +1,7 @@
 import React from "react";
 import Pagination from "./Pagination";
 import MultipleCharacter from "./MultipleCharacter";
+import MultipleCharacterFetch from "./MultipleCharacterFetch";
 
 const EpisodesRicky = ({ episodeList, setEpisodeURL }) => {
   const { data, status } = episodeList;
@@ -25,6 +26,7 @@ const EpisodesRicky = ({ episodeList, setEpisodeURL }) => {
                   indexUser={dataPoint.characters.map(
                     (urlResident, index) => `${urlResident.slice(42)}`
                   )}
+                  category="character/"
                 />
               </div>
             ))}

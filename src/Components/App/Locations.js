@@ -1,6 +1,7 @@
 import React from "react";
 import MultipleCharacter from "./MultipleCharacter";
 import Pagination from "./Pagination";
+import MultipleCharacterFetch from "./MultipleCharacterFetch";
 
 const LocationsRicky = ({ locationList, setLocationURL }) => {
   const { data, status } = locationList;
@@ -37,6 +38,7 @@ const LocationsRicky = ({ locationList, setLocationURL }) => {
                       indexUser={dataPoint.residents.map(
                         (urlResident, index) => `${urlResident.slice(42)}`
                       )}
+                      category="character/"
                     />
                   </div>
                 </section>
